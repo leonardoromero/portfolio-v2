@@ -6,8 +6,6 @@ import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
 import { PriceList } from './components/PriceList';
 import { ProgressBar } from './components/ProgressBar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ContactForm } from './components/Contact/ContactForm';
 
 function App() {
 	const systemTheme = useSystemTheme();
@@ -18,7 +16,7 @@ function App() {
 			<Hero theme={systemTheme} />
 			<Projects theme={systemTheme} />
 			<Technologies theme={systemTheme} />
-			<PriceList theme={systemTheme}/>
+			<PriceList theme={systemTheme} />
 			<Footer theme={systemTheme} />
 		</>
 	);
