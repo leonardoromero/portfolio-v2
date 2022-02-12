@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Hero } from './components/Hero';
+import { Technologies } from './components/Technologies';
+import useSystemTheme from 'use-system-theme';
+import { Projects } from './components/Projects';
+import { Footer } from './components/Footer';
+import { PriceList } from './components/PriceList';
+import { ProgressBar } from './components/ProgressBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ContactForm } from './components/Contact/ContactForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const systemTheme = useSystemTheme();
+
+	return (
+		<>
+			<ProgressBar />
+			<Hero theme={systemTheme} />
+			<Projects theme={systemTheme} />
+			<Technologies theme={systemTheme} />
+			<PriceList theme={systemTheme}/>
+			<Footer theme={systemTheme} />
+		</>
+	);
 }
 
 export default App;
