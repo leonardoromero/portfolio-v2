@@ -1,4 +1,4 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 
 export const Card = ({ img, title, delivery, link, theme }) => {
 	return (
@@ -8,7 +8,12 @@ export const Card = ({ img, title, delivery, link, theme }) => {
 			rel='noreferrer'
 			className='inline-block duration-300 hover:scale-110'
 		>
-			<div className='max-w-md antialiased text-gray-900 wrapper'>
+			<motion.div
+				initial={{ rotate: 10 }}
+				whileInView={{ rotate: 3 }}
+				transition={{ duration: 1.2, type: 'spring', bounce: 0.3 }}
+				className='max-w-md antialiased text-gray-900 wrapper'
+			>
 				<div>
 					<img
 						src={img}
@@ -34,13 +39,13 @@ export const Card = ({ img, title, delivery, link, theme }) => {
 								{title}
 							</h4>
 
-							<div className='text-sm text-gray-600  dark:text-gray-200 md:text-md'>
+							<div className='text-sm text-gray-600 dark:text-gray-200 md:text-md'>
 								Delivered {delivery}
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</a>
 	);
 };

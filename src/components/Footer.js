@@ -24,7 +24,7 @@ export const Footer = () => {
 						<img
 							src={linkedin}
 							alt='linkedin logo'
-							className='h-8 transition invert hover:scale-105'
+							className='h-8 transition invert hover:scale-125'
 						/>
 					</a>
 					<a
@@ -35,7 +35,7 @@ export const Footer = () => {
 						<img
 							src={instagram}
 							alt='instagram logo'
-							className='h-8 transition invert hover:scale-105'
+							className='h-8 transition invert hover:scale-125'
 						/>
 					</a>
 					<a
@@ -46,7 +46,7 @@ export const Footer = () => {
 						<img
 							src={whatsapp}
 							alt='whatsapp logo'
-							className='h-8 transition invert hover:scale-105'
+							className='h-8 transition invert hover:scale-125'
 						/>
 					</a>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bg from '../img/uuundulate-50-2.svg';
 import Modal from 'react-modal';
-import { ContactForm } from './Contact/ContactForm';
+import { motion } from 'framer-motion';
 
 export const PriceList = ({ theme }) => {
 	const customStyles = {
@@ -65,16 +65,14 @@ export const PriceList = ({ theme }) => {
 			<div className='py-10 m-auto max-w-7xl'>
 				<section>
 					<header className='text-center'>
-						<h3 className='text-5xl font-extrabold lg:text-8xl md:text-7xl'>
+						<motion.div initial={{ scale:0.5 }}
+				whileInView={{ scale:1 }}
+				transition={{ duration: 1.2, type: 'spring', bounce: 0.3 }}>
+							<h3 className='text-5xl font-extrabold lg:text-8xl md:text-7xl'>
 							PRICING
 						</h3>
-						{/* <p className='mb-2 text-xl text-gray-400'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit
-						dolor sit amet consectetur.
-					</p>
-					<p className='text-xl font-bold text-gray-500'>
-						Maxime tenetur debitis fuga vitae soluta.
-					</p> */}
+							</motion.div>
+						
 					</header>
 					<div className='flex flex-col justify-between mx-5 mt-10 space-y-5 md:space-y-0 md:flex-row md:space-x-5 md:mx-0'>
 						<div className='flex-1'>

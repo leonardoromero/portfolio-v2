@@ -3,6 +3,8 @@ import lightBg from '../img/ccchaos.svg';
 import mk from '../img/mk.png';
 import carolinails from '../img/carolinails.png';
 import { Card } from './Card';
+import { motion } from 'framer-motion';
+
 
 export const Projects = ({ theme }) => {
 	return (
@@ -13,9 +15,14 @@ export const Projects = ({ theme }) => {
 			style={{ backgroundImage: `url(${lightBg})` }}
 		>
 			<div className='flex flex-col items-center justify-center w-10/12 gap-5 max-w-7xl'>
-				<h3 className='text-5xl font-extrabold lg:text-8xl md:text-7xl projects'>
+				<motion.div
+				initial={{ scale:0.5 }}
+				whileInView={{ scale:1 }}
+				transition={{ duration: 1.2, type: 'spring', bounce: 0.3 }}>
+					<h3 className='text-5xl font-extrabold lg:text-8xl md:text-7xl projects'>
 					PROJECTS
 				</h3>
+					</motion.div>
 				<div className='flex flex-wrap items-center justify-center w-10/12 gap-5 cards max-w-7xl'>
 					<Card
 						img={mk}
