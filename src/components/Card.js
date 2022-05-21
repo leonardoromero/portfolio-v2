@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const Card = ({ img, title, delivery, link, theme }) => {
+export const Card = ({ img, title, delivery, link, theme, technologies }) => {
 	return (
 		<a
 			href={link}
@@ -38,9 +38,8 @@ export const Card = ({ img, title, delivery, link, theme }) => {
 							<h4 className='font-semibold leading-tight uppercase truncate dark:text-gray-100 text-md md:text-lg'>
 								{title}
 							</h4>
-
 							<div className='text-sm text-gray-600 dark:text-gray-200 md:text-md'>
-								Delivered {delivery}
+								Delivered {delivery} - { technologies }
 							</div>
 						</div>
 					</div>
