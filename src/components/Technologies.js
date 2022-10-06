@@ -3,35 +3,34 @@ import html from '../img/icons/html.svg';
 import css from '../img/icons/css.svg';
 import sass from '../img/icons/sass.svg';
 import javascript from '../img/icons/javascript.svg';
-import json from '../img/icons/json.svg';
-import jquery from '../img/icons/jquery.svg';
 import react from '../img/icons/react.svg';
 import git from '../img/icons/git.svg';
 import github from '../img/icons/github.svg';
-import apple from '../img/icons/apple.svg';
-import windows from '../img/icons/windows.svg';
 import firebase from '../img/icons/firebase.svg';
 import npm from '../img/icons/npm.svg';
 import python from '../img/icons/python.svg';
-import slack from '../img/icons/slack.svg';
 import pic from '../img/profile.jpg';
 import logo from '../img/icons/logo.png';
+import ts from '../img/icons/ts.png';
+import hardhat from '../img/icons/hardhat.png';
+import metamask from '../img/icons/metamask.png';
+import next from '../img/icons/next.png';
+import truffle from '../img/icons/truffle.png';
 import { motion } from 'framer-motion';
 
 export const Technologies = ({ theme }) => {
 	return (
 		<>
 			<div
-				className={`grid w-full py-10 lg:bg-fixed lg:py-40 place-items-center ${
-					theme === 'light'
+				className={`grid w-full py-10 lg:bg-fixed lg:py-40 place-items-center ${theme === 'light'
 						? 'custom-background-light'
 						: 'custom-background-dark'
-				}`}
+					}`}
 			>
 				<div className='grid grid-cols-4 gap-4 p-6 rounded-xl backdrop-blur-[2px] md:grid-cols-6 lg:grid-cols-8 max-w-7xl place-items-center'>
 					<motion.div
-						initial={{ x:-200 }}
-						whileInView={{ x:0 }}
+						initial={{ x: -200 }}
+						whileInView={{ x: 0 }}
 						transition={{
 							duration: 1.2,
 							type: 'spring',
@@ -71,15 +70,9 @@ export const Technologies = ({ theme }) => {
 						loading='lazy'
 					/>
 					<img
-						className={`w-full ${theme === 'dark' && 'invert'}`}
-						src={json}
-						alt='json logo'
-						loading='lazy'
-					/>
-					<img
 						className='w-full'
-						src={jquery}
-						alt='jquery logo'
+						src={ts}
+						alt='typescript logo'
 						loading='lazy'
 					/>
 					<img
@@ -102,18 +95,6 @@ export const Technologies = ({ theme }) => {
 					/>
 					<img
 						className='w-full'
-						src={apple}
-						alt='apple logo'
-						loading='lazy'
-					/>
-					<img
-						className='w-full'
-						src={windows}
-						alt='windows logo'
-						loading='lazy'
-					/>
-					<img
-						className='w-full'
 						src={python}
 						alt='python logo'
 						loading='lazy'
@@ -130,10 +111,29 @@ export const Technologies = ({ theme }) => {
 						alt='npm logo'
 						loading='lazy'
 					/>
+
 					<img
 						className='w-full'
-						src={slack}
-						alt='slack logo'
+						src={hardhat}
+						alt='hardhat logo'
+						loading='lazy'
+					/>
+					<img
+						className='w-full'
+						src={metamask}
+						alt='metamask logo'
+						loading='lazy'
+					/>
+					<img
+						className='w-full'
+						src={next}
+						alt='next logo'
+						loading='lazy'
+					/>
+					<img
+						className='w-full'
+						src={truffle}
+						alt='truffle logo'
 						loading='lazy'
 					/>
 					<img

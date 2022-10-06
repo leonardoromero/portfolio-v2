@@ -4,6 +4,7 @@ import mk from '../img/mk.png';
 import carolinails from '../img/carolinails.png';
 import medium from '../img/medium.png';
 import felipeSainz from '../img/felipe-sainz.png';
+import ticko from '../img/ticko.png';
 import { Card } from './Card';
 import { motion } from 'framer-motion';
 
@@ -32,6 +33,9 @@ export const Projects = ({ theme }) => {
 						delivery='January 2022'
 						link='https://www.marianokowal.com.ar'
 						technologies={'[ReactJS, Tailwind, Framer Motion]'}
+						design={true}
+						development={true}
+						deploy={true}
 					/>
 					<Card
 						img={carolinails}
@@ -39,6 +43,9 @@ export const Projects = ({ theme }) => {
 						delivery='December 2021'
 						link='https://carolinails.netlify.app'
 						technologies={'[ReactJS, Tailwind]'}
+						design={true}
+						development={true}
+						deploy={true}
 					/>
 					<Card
 						img={felipeSainz}
@@ -46,6 +53,9 @@ export const Projects = ({ theme }) => {
 						delivery='April 2022'
 						link='https://erefor.github.io/felipe-page/'
 						technologies={'[ReactJS, Tailwind, Framer Motion]'}
+						design={true}
+						development={true}
+						deploy={true}
 					/>
 					<Card
 						img={medium}
@@ -53,6 +63,19 @@ export const Projects = ({ theme }) => {
 						delivery='May 2022'
 						link='https://medium-leoromero.netlify.app'
 						technologies={'[NextJS, ReactJS, Tailwind]'}
+						design={false}
+						development={true}
+						deploy={true}
+					/>
+					<Card
+						img={ticko}
+						title='ticko'
+						delivery='September 2022'
+						link='https://hackaton-bearbuilders.vercel.app/'
+						technologies={'[NextJS, ReactJS, SASS, RainbowKit]'}
+						design={true}
+						development={true}
+						deploy={false}
 					/>
 				</div>
 			</div>

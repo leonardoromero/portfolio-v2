@@ -2,48 +2,11 @@ import React, { useState } from 'react';
 import bg from '../img/uuundulate-50-2.svg';
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
+import servicesList from '../utils/servicesList'
+import customStyles from '../utils/customPricesStyle'
+import customStylesDark from '../utils/customPricesDarkStyle'
 
 export const PriceList = ({ theme }) => {
-	const customStyles = {
-		overlay: {
-			position: 'fixed',
-			top: 0,
-			left: 0,
-			right: 0,
-			bottom: 0,
-			backgroundColor: 'rgba(7,24,47, 0.65)',
-		},
-		content: {
-			top: '50%',
-			left: '50%',
-			right: 'auto',
-			bottom: 'auto',
-			transform: 'translate(-50%, -50%)',
-			padding: '3rem',
-			border: '#feb703 1px solid',
-			backgroundColor: 'white',
-		},
-	};
-	const customStylesDark = {
-		overlay: {
-			position: 'fixed',
-			top: 0,
-			left: 0,
-			right: 0,
-			bottom: 0,
-			backgroundColor: 'rgba(7,24,47, 0.65)',
-		},
-		content: {
-			top: '50%',
-			left: '50%',
-			right: 'auto',
-			bottom: 'auto',
-			transform: 'translate(-50%, -50%)',
-			padding: '3rem',
-			border: '#feb703 1px solid',
-			backgroundColor: 'rgb(7, 24, 47)',
-		},
-	};
 
 	const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -57,22 +20,21 @@ export const PriceList = ({ theme }) => {
 
 	return (
 		<div
-			className={`min-h-screen bg-center flex bg-no-repeat ${
-				theme === 'dark' && 'bg-[#07182F]'
-			}`}
+			className={`min-h-screen bg-center flex bg-no-repeat ${theme === 'dark' && 'bg-[#07182F]'
+				}`}
 			style={{ backgroundImage: `url(${bg})` }}
 		>
 			<div className='py-10 m-auto max-w-7xl'>
 				<section>
 					<header className='text-center'>
-						<motion.div initial={{ scale:0.5 }}
-				whileInView={{ scale:1 }}
-				transition={{ duration: 1.2, type: 'spring', bounce: 0.3 }}>
+						<motion.div initial={{ scale: 0.5 }}
+							whileInView={{ scale: 1 }}
+							transition={{ duration: 1.2, type: 'spring', bounce: 0.3 }}>
 							<h3 className='text-5xl font-extrabold lg:text-8xl md:text-7xl'>
-							PRICING
-						</h3>
-							</motion.div>
-						
+								PRICING
+							</h3>
+						</motion.div>
+
 					</header>
 					<div className='flex flex-col justify-between mx-5 mt-10 space-y-5 md:space-y-0 md:flex-row md:space-x-5 md:mx-0'>
 						<div className='flex-1'>
@@ -98,126 +60,35 @@ export const PriceList = ({ theme }) => {
 									</div>
 								</div>
 								<hr className='mt-5 text-gray-100' />
-								{/* <!-- START LIST SECTION--> */}
 								<div className='mt-10'>
 									<ul className='space-y-4'>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
+										{servicesList.map(service => (
+											<li className='flex items-center'>
+												<div className={`${service.background} p-1 rounded-full`}>
+													<svg
+														className='flex-shrink-0 w-4 h-4 text-white'
+														xmlns='http://www.w3.org/2000/svg'
+														fill='none'
+														viewBox='0 0 24 24'
+														stroke='currentColor'
+														aria-hidden='true'
+													>
+														<path
+															stroke-linecap='round'
+															stroke-linejoin='round'
+															stroke-width='2'
+															d={service.icon}
+														/>
+													</svg>
+												</div>
 
-											<span className='ml-3 text-base text-indigo-900'>
-												Font-end development
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Custom domain acquisition*
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Cloud hosting management*
-											</span>
-										</li>
-
-										<li className='flex items-center'>
-											<div className='bg-gray-200 rounded-full '>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M6 18L18 6M6 6l12 12'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-gray-300'>
-												Web design
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='bg-gray-200 rounded-full '>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M6 18L18 6M6 6l12 12'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-gray-300'>
-												Content creation
-											</span>
-										</li>
+												<span className={`${service.textColor} ml-3`}>
+													{service.text}
+												</span>
+											</li>
+										))}
 									</ul>
 								</div>
-								{/* <!-- END LIST SECTION--> */}
 								<div className='mt-10'>
 									<button
 										onClick={openModal}
@@ -228,7 +99,6 @@ export const PriceList = ({ theme }) => {
 								</div>
 							</div>
 						</div>
-
 						<div className='flex-1'>
 							<div className='p-10 bg-white border-[#feb703] border rounded-lg'>
 								<div className='flex items-center justify-between'>
@@ -252,127 +122,35 @@ export const PriceList = ({ theme }) => {
 									</div>
 								</div>
 								<hr className='mt-5 text-gray-100' />
-								{/* <!-- START LIST SECTION--> */}
 								<div className='mt-10'>
 									<ul className='space-y-4'>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
+										{servicesList.map(service => (
+											<li className='flex items-center'>
+												<div className='p-1 bg-indigo-900 rounded-full'>
+													<svg
+														className='flex-shrink-0 w-4 h-4 text-white'
+														xmlns='http://www.w3.org/2000/svg'
+														fill='none'
+														viewBox='0 0 24 24'
+														stroke='currentColor'
+														aria-hidden='true'
+													>
+														<path
+															stroke-linecap='round'
+															stroke-linejoin='round'
+															stroke-width='2'
+															d='M5 13l4 4L19 7'
+														/>
+													</svg>
+												</div>
 
-											<span className='ml-3 text-base text-indigo-900'>
-												Front-end development
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Custom domain acquistion*
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Cloud hosting management*
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Unique web design
-											</span>
-										</li>
-										<li className='flex items-center'>
-											<div className='p-1 bg-indigo-900 rounded-full'>
-												<svg
-													className='flex-shrink-0 w-4 h-4 text-white'
-													xmlns='http://www.w3.org/2000/svg'
-													fill='none'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													aria-hidden='true'
-												>
-													<path
-														stroke-linecap='round'
-														stroke-linejoin='round'
-														stroke-width='2'
-														d='M5 13l4 4L19 7'
-													/>
-												</svg>
-											</div>
-
-											<span className='ml-3 text-base text-indigo-900'>
-												Content creation
-											</span>
-										</li>
+												<span className='ml-3 text-base text-indigo-900'>
+													{service.text}
+												</span>
+											</li>
+										))}
 									</ul>
 								</div>
-								{/* <!-- END LIST SECTION--> */}
 								<div className='mt-10'>
 									<button
 										onClick={openModal}
@@ -390,7 +168,7 @@ export const PriceList = ({ theme }) => {
 												: customStyles
 										}
 									>
-										<p>
+										<p className={theme === 'dark' && 'text-white'}>
 											Feel free to contact me at{' '}
 											<span className='font-bold'>
 												leonardorommero@gmail.com

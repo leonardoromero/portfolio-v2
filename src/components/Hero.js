@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import lightBg from '../img/hero-bg-light.svg';
 import darkBg from '../img/hero-bg-dark.svg';
 import textBg from '../img/title-bg.svg';
-import TextTransition, { presets } from 'react-text-transition';
+import Typewriter from 'typewriter-effect';
+
 
 export const Hero = ({ theme }) => {
-	const TEXTS = [
-		'web designer 🖌️',
-		'front-end developer 👨‍💻',
-		'argentinian 🇦🇷',
-		'cat person 🐱',
-		'vegetarian 🌱',
-		'bilingual',
-	];
-	const [index, setIndex] = useState(0);
-	useEffect(() => {
-		const intervalId = setInterval(
-			() => setIndex(index => index + 1),
-			3000
-		);
-		return () => {
-			clearTimeout(intervalId);
-		};
-	}, []);
 
 	return (
 		<div
@@ -46,13 +29,21 @@ export const Hero = ({ theme }) => {
 						: 'p-2 text-2xl md:text-4xl'
 				}
 			>
-				<TextTransition
-					text={TEXTS[index % TEXTS.length]}
-					springConfig={presets.default}
-					inline={true}
-					direction='down'
-					className='font-bold'
-					noOverflow={true}
+				<Typewriter
+					options={{
+						strings: [
+							'web designer',
+							'front-end developer',
+							'argentinian',
+							'cat person',
+							'vegetarian',
+							'bilingual',
+							'crypto enthusiast'
+						],
+						autoStart: true,
+						loop: true,
+						skipAddStyles: true,
+					}}
 				/>
 			</h2>
 		</div>

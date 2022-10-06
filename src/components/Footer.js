@@ -3,6 +3,7 @@ import footerGradient from '../img/footer-gradient.svg';
 import linkedin from '../img/icons/linkedin.svg';
 import instagram from '../img/icons/instagram.svg';
 import whatsapp from '../img/icons/whatsapp.svg';
+import github from '../img/github.png';
 import logo from '../img/icons/logo.png';
 
 export const Footer = () => {
@@ -46,6 +47,17 @@ export const Footer = () => {
 						<img
 							src={whatsapp}
 							alt='whatsapp logo'
+							className='h-8 transition invert hover:scale-125'
+						/>
+					</a>
+					<a
+						target='_blank'
+						rel='noreferrer'
+						href='https://www.github.com/leonardoromero'
+					>
+						<img
+							src={github}
+							alt='github logo'
 							className='h-8 transition invert hover:scale-125'
 						/>
 					</a>
